@@ -9,7 +9,7 @@ contract GasBad {
              sender = user;
              result = a + type(uint16).max;
         }else{
-            revert();
+            revert("No fella");
         }
         return (result,sender);
     }
@@ -18,7 +18,7 @@ contract GasBad {
             sender = user;
             result = a + type(uint16).max;
         }else {
-            revert();
+            revert("No fella");
         }  
     }
 }
