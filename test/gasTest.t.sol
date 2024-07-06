@@ -3,11 +3,15 @@ pragma solidity 0.8.26;
 
 import {Test} from "forge-std/Test.sol";
 import {GasBad} from "../src/return.sol";
+import {Reverts} from "../src/require.sol";
 
 contract returnTest is Test {
     GasBad gasbad;
+    Reverts rev;
+
     function setUp() public {
         gasbad = new GasBad();
+        rev = new Reverts();
     }
 
     function test_gas_firstFunc() public {
@@ -18,5 +22,15 @@ contract returnTest is Test {
     function test_gas_secFunc() public {
         vm.prank(address(44));
         gasbad.secondFunc(23,address(44));
+    }
+
+    function test_rev_firstFunc() public {
+        vm.prank(address(45));
+        rev.firstFunc(address(45));
+    }
+
+    function test_rev_secFunc() public {
+        vm.prank(address(45));
+        rev.secondFunc(address(45));
     }
 }
