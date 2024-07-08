@@ -50,11 +50,17 @@ contract returnTest is Test {
     function test_vargas_firstFunc() public  {
         vargas.firstFunc();
     }
-    function test_vargas_secFunc() public{
+    function test_vargas_secFunc() public view {
         vargas.secondFunc();
     }
-    function test_vargas_thirdFunc() public{
+    function test_vargas_thirdFunc() public view{
         vargas.thirdFunc();
+    }
+    function test_vargas_fourthFunc() public view{
+        vargas.fourthFunc();
+    }
+    function test_vargas_fifthFunc() public view{
+        vargas.fifthFunc();
     }
 
 }
