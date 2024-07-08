@@ -5,16 +5,19 @@ import {Test} from "forge-std/Test.sol";
 import {GasBad} from "../src/return.sol";
 import {Reverts} from "../src/require.sol";
 import {ForGas} from "../src/for.sol";
+import {VarGas} from "../src/variables.sol";
 
 contract returnTest is Test {
     GasBad gasbad;
     Reverts rev;
     ForGas forResult;
+    VarGas vargas;
 
     function setUp() public {
         gasbad = new GasBad();
         rev = new Reverts();
         forResult = new ForGas();
+        vargas = new VarGas();
     }
 
     function test_gas_firstFunc() public {
@@ -43,6 +46,15 @@ contract returnTest is Test {
 
     function test_for_secFunc() public {
         forResult.secondFunc();
+    }
+    function test_vargas_firstFunc() public  {
+        vargas.firstFunc();
+    }
+    function test_vargas_secFunc() public{
+        vargas.secondFunc();
+    }
+    function test_vargas_thirdFunc() public{
+        vargas.thirdFunc();
     }
 
 }
