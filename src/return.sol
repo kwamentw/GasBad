@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.26;
 
+/**
+ * @title return type gas optimisation tricks
+ * @author Kwame 4B
+ * @notice testing our various return types to see which is gas efficient
+ */
 contract GasBad {
     /**
      * uninitialized return variables(GAS GOOD)

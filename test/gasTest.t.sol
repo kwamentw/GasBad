@@ -59,7 +59,7 @@ contract returnTest is Test {
     function test_vargas_fourthFunc() public view{
         vargas.fourthFunc();
     }
-    function test_vargas_fifthFunc() public view{
+    function test_vargas_fifthFunc() public {
         vargas.fifthFunc();
     }
 
