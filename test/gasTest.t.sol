@@ -2,6 +2,7 @@
 pragma solidity 0.8.26;
 
 import {Test} from "forge-std/Test.sol";
+import {console2} from "forge-std/console2.sol";
 import {GasBad} from "../src/return.sol";
 import {Reverts} from "../src/require.sol";
 import {ForGas} from "../src/for.sol";
@@ -47,6 +48,9 @@ contract returnTest is Test {
     function test_for_secFunc() public {
         forResult.secondFunc();
     }
+    function test_for_thirdFunc() public {
+        forResult.thirdFunc();
+    }
     function test_vargas_firstFunc() public  {
         vargas.firstFunc();
     }
@@ -56,10 +60,11 @@ contract returnTest is Test {
     function test_vargas_thirdFunc() public view{
         vargas.thirdFunc();
     }
-    function test_vargas_fourthFunc() public view{
+    function test_vargas_fourthFunc() public {
         vargas.fourthFunc();
     }
     function test_vargas_fifthFunc() public {
+        // console2.log(vargas.s_varTwo());
         vargas.fifthFunc();
     }
 

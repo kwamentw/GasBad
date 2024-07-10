@@ -8,16 +8,25 @@ pragma solidity 0.8.26;
  */
 contract Reverts{
     error accessDenied();
-    // no revert - 8313 wei
-    // revert - 5511 wei
+
+    /**
+     * This function uses custom defined error
+     * @param user address of user
+     * when function doesn't revert - gas spent - 8313 wei
+     * when function reverts - gas spent - 5511 wei
+     */
     function firstFunc(address user)  public view {
         if (user != msg.sender){
             revert accessDenied();
         }
     }
 
-    // no revert - 8346 wei
-    // revert - 5613 wei
+    /**
+     * This function uses require
+     * @param user address of user
+     * when function does not revert - gas spent - 8346 wei
+     * when function reverts - gas spent - 5613 wei
+     */
     function secondFunc(address user) public view{
         require(user == msg.sender,"accessDenied"); 
     }
