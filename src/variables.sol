@@ -12,6 +12,10 @@ contract VarGas{
     uint256 s_varOne;
     uint256 s_varTwo;
 
+    // public variables
+    uint256 public s_varThree = type(uint8).max;
+    uint256 internal s_varFour = type(uint8).max;
+
     constructor(){
         s_varTwo = type(uint8).max;
     }
@@ -70,6 +74,22 @@ contract VarGas{
     function fifthFunc() public returns(uint256){
         s_varTwo += type(uint16).max;
         return s_varTwo;
+    }
+
+    /**
+     * returning a public storage variable
+     * gas spent - 7558
+     */
+    function sixFunc() public view returns(uint256){
+        return s_varThree;
+    }
+
+    /**
+     * Returns a private/internal variable
+     * gas spent - 7580
+     */
+    function sevnFunc() public view returns(uint256){
+        return s_varFour;
     }
 
 

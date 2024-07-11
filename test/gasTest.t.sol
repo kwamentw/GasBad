@@ -60,12 +60,18 @@ contract returnTest is Test {
     function test_vargas_thirdFunc() public view{
         vargas.thirdFunc();
     }
-    function test_vargas_fourthFunc() public {
+    function test_vargas_fourthFunc() public view{
         vargas.fourthFunc();
     }
     function test_vargas_fifthFunc() public {
         // console2.log(vargas.s_varTwo());
         vargas.fifthFunc();
+    }
+    function test_vargas_sixFunc() public view{
+        vargas.sixFunc();
+    }
+    function test_vargas_sevnFunc() public view{
+        vargas.sevnFunc();
     }
 
 }
