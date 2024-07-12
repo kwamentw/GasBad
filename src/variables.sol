@@ -16,8 +16,14 @@ contract VarGas{
     uint256 public s_varThree = type(uint8).max;
     uint256 internal s_varFour = type(uint8).max;
 
+    //mapping
+    mapping (address user => uint256 num) favNumber;
+
     constructor(){
         s_varTwo = type(uint8).max;
+        favNumber[msg.sender]=44;
+        favNumber[address(41)]=44;
+        favNumber[address(42)]=44;
     }
 
     /**
@@ -92,5 +98,21 @@ contract VarGas{
         return s_varFour;
     }
 
+    /**
+     * check whether initialising mappns to cache variables will save us data
+     * gas spent -7500
+     */
+    function eighthFunc() public view returns(uint256){
+        uint256 cacheVar = favNumber[address(42)];
+        return cacheVar;
+    }
+
+    /**
+     * can this OG way be better than caching
+     * gas spent -7521
+     */
+    function ninethFunc() public view returns(uint256){
+        return favNumber[address(42)];
+    }
 
 }
