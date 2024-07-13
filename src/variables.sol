@@ -115,4 +115,25 @@ contract VarGas{
         return favNumber[address(42)];
     }
 
+    /**
+     * checking to see gas different between this and unchecked wrap
+     * gas spent: 7741
+     */
+    function tenthFunc() public view returns(uint256){
+    uint256 result = favNumber[msg.sender] + type(uint16).max;
+    return result;
+    }
+
+    /**
+     * wrapping the calculation on an unchecked block to see whether there will be gas diff
+     * gas spent: 7676
+     */
+    function eleventhFunc() public view returns(uint256){
+        unchecked{
+            uint256 result = favNumber[msg.sender] + type(uint16).max;
+
+            return result;
+        }
+    }
+
 }

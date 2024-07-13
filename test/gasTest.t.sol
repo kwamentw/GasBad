@@ -81,4 +81,12 @@ contract returnTest is Test {
         vargas.ninethFunc();
     }
 
+    function test_vargas_tenthFunc() public view {
+        vargas.tenthFunc();
+    }
+
+    function test_vargas_eleventhFunc() public view{
+        vargas.eleventhFunc();
+    }
+
 }
