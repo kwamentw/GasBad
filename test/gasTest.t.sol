@@ -8,6 +8,12 @@ import {Reverts} from "../src/require.sol";
 import {ForGas} from "../src/for.sol";
 import {VarGas} from "../src/variables.sol";
 
+/**
+ * @title Gas check test
+ * @author Kwame 4b
+ * @notice Test to check how much gas spent by the various functions 
+ */
+
 contract returnTest is Test {
     GasBad gasbad;
     Reverts rev;
