@@ -9,7 +9,7 @@ import {ForGas} from "../src/for.sol";
 import {VarGas} from "../src/variables.sol";
 
 /**
- * @title Gas check test
+ * @title Gas optimisations check test
  * @author Kwame 4b
  * @notice Test to check how much gas spent by the various functions 
  */
@@ -70,7 +70,6 @@ contract returnTest is Test {
         vargas.fourthFunc();
     }
     function test_vargas_fifthFunc() public {
-        // console2.log(vargas.s_varTwo());
         vargas.fifthFunc();
     }
     function test_vargas_sixFunc() public view{

@@ -13,7 +13,7 @@ contract GasBad {
      * @param user second param
      * @return result of a + uint16 max
      * @return sender if msg.sender is equal to user
-     * @dev this function spent 8628 wei on gas.
+     * @dev gas spent - 8628 wei
      */
     function firstFunc(uint256 a, address user) public view returns(uint256, address){
         address sender;
@@ -33,7 +33,7 @@ contract GasBad {
      * @param user second param
      * @return result of a uint16 max
      * @return sender if msg.sender is equal to user
-     * @dev this function spent 8685 wei on gas meaning previous function gas better
+     * @dev gas spent - 8685 wei meaning previous function gas better
      */
     function secondFunc(uint256 a, address user) public view returns(uint256 result,address sender){
         if (msg.sender == user){
