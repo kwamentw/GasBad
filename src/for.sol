@@ -4,7 +4,7 @@ pragma solidity 0.8.26;
 /**
  * @title For loop gas optimizations
  * @author Kwame 4b
- * @notice Testing to see whether popular gas tricks really work
+ * @notice Testing to see whether popular loop gas optimisations really work
  */
 contract ForGas {
     // dynamic array to be used in test

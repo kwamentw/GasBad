@@ -4,7 +4,7 @@ pragma solidity 0.8.26;
 /**
  * @title Error handling gas optimization tricks
  * @author Kwame 4b
- * @notice Testing your typical trick to see how much gas it saves us by
+ * @notice Testing your typical optimisations to see how much gas it saves us by
  */
 contract Reverts{
     error accessDenied();

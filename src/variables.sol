@@ -4,7 +4,7 @@ pragma solidity 0.8.26;
 /**
  * @title Variable initialization gas optimization tricks
  * @author Kwame 4b
- * @notice This is a check to see whether if all the popular tricks actually save gas
+ * @notice This is a check to see whether if all the popular var optimisations actually save gas
  */
 contract VarGas{
 
