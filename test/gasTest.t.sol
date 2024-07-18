@@ -26,7 +26,7 @@ contract returnTest is Test {
         forResult = new ForGas();
         vargas = new VarGas();
     }
-////////////////// Return Test  /////////////////////
+////////////////// Return Test  ////////////////////////////////
     function test_gas_firstFunc() public {
         vm.prank(address(44));
         gasbad.firstFunc(23,address(44));
@@ -48,7 +48,7 @@ contract returnTest is Test {
         vm.prank(address(45));
         rev.secondFunc(address(45));
     }
-//////////////////////// for test //////////////////////////
+//////////////////////// for test //////////////////////////////
 
     function test_for_firstFunc() public{
         forResult.firstFunc();
@@ -60,7 +60,7 @@ contract returnTest is Test {
     function test_for_thirdFunc() public {
         forResult.thirdFunc();
     }
-//////////////////////// variable init test //////////////////////////
+////////////////// variable init test /////////////////////////
     function test_vargas_firstFunc() public  {
         vargas.firstFunc();
     }
