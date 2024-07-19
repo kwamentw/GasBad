@@ -10,7 +10,7 @@ import {VarGas} from "../src/variables.sol";
 
 /**
  * @title Gas optimisations check test
- * @author Kwame 4b
+ * @author Kwame 4B
  * @notice Test to check how much gas spent by the various functions 
  */
 
@@ -60,7 +60,7 @@ contract returnTest is Test {
     function test_for_thirdFunc() public {
         forResult.thirdFunc();
     }
-////////////////// variable init test /////////////////////////
+////////////////// variable initialisation test /////////////////////////
     function test_vargas_firstFunc() public  {
         vargas.firstFunc();
     }
