@@ -136,4 +136,11 @@ contract VarGas{
         }
     }
 
+//============ totally unrelated (about casting errors)==========//
+
+    // this shit overflows because the a value is cast implicitly to uint24 because 167... is of type uint24 so the addition overflows before initialisation to output// only getaway is if a has a bigger type then 167.. will be cast to that type 
+    function hiddenOverflow(uint8 a) public view returns(uint256 output){
+        output = 16777210 + a;
+    }
+
 }

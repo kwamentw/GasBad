@@ -98,5 +98,13 @@ contract returnTest is Test {
         vargas.eleventhFunc();
     }
 
+    function test_overflow_init() public view{
+        vargas.hiddenOverflow(7);
+    }
+
 }
 //============================================================//
+
+
+
+
