@@ -99,7 +99,9 @@ contract returnTest is Test {
     }
 
     function test_overflow_init() public view{
-        vargas.hiddenOverflow(7);
+        // vargas.hiddenOverflow(7);
+        vargas.hiddenOverflow2(255,65325);
+        // vargas.hiddenOverflow3(200);
     }
 
 }

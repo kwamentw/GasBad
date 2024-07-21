@@ -143,4 +143,13 @@ contract VarGas{
         output = 16777210 + a;
     }
 
+    // this will revert because a+b exceeds uint16 max
+    function hiddenOverflow2(uint8 a, uint16 b) public view returns(uint256 output){
+        output = a+b;
+    }
+
+    //this will revert uint8max + type(1days) will overflow
+    function hiddenOverflow3(uint8 a) public view returns(uint256 output){
+        output = 1 days * a;
+    }
 }
