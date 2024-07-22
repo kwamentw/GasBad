@@ -152,4 +152,5 @@ contract VarGas{
     function hiddenOverflow3(uint8 a) public view returns(uint256 output){
         output = 1 days * a;
     }
+//===============================================================//
 }
