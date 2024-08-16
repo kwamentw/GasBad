@@ -7,6 +7,7 @@ import {GasBad} from "../src/return.sol";
 import {Reverts} from "../src/require.sol";
 import {ForGas} from "../src/for.sol";
 import {VarGas} from "../src/variables.sol";
+import {BitwiseOperations} from "../src/bitwise.sol";
 
 /**
  * @title Gas optimisations check test
@@ -19,12 +20,14 @@ contract returnTest is Test {
     Reverts rev;
     ForGas forResult;
     VarGas vargas;
+    BitwiseOperations bitwise;
 
     function setUp() public {
         gasbad = new GasBad();
         rev = new Reverts();
         forResult = new ForGas();
         vargas = new VarGas();
+        bitwise = new BitwiseOperations();
     }
 ////////////////// Return Test  ////////////////////////////////
     function test_gas_firstFunc() public {
@@ -102,6 +105,21 @@ contract returnTest is Test {
         // vargas.hiddenOverflow(7);
         vargas.hiddenOverflow2(255,65325);
         // vargas.hiddenOverflow3(200);
+    }
+
+    function test_bitwise_bitDivFunc() public view {
+        bitwise.bitwiseDivision(44);
+    }
+    function test_bitwise_divNormFunc() public view{
+        bitwise.normalDivision(44);
+    }
+
+    function test_bitwise_bitMulFunc() public view {
+        bitwise.bitwiseMultiplication(257);
+    }
+
+    function test_bitwise_normMulFunc() public view {
+        bitwise.normalMultiplication(257);
     }
 
 }
