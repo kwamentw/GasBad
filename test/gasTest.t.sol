@@ -3,6 +3,7 @@ pragma solidity 0.8.26;
 
 import {Test} from "forge-std/Test.sol";
 import {console2} from "forge-std/console2.sol";
+import {console} from "forge-std/console.sol";
 import {GasBad} from "../src/return.sol";
 import {Reverts} from "../src/require.sol";
 import {ForGas} from "../src/for.sol";
@@ -121,6 +122,37 @@ contract returnTest is Test {
     function test_bitwise_normMulFunc() public view {
         bitwise.normalMultiplication(257);
     }
+
+    function test_bitwise_bitModFunc() public view {
+        bitwise.bitwiseModulo(515);
+    }
+
+    function test_bitwise_normModFunc() public view {
+        bitwise.normalModulo(515);
+    }
+
+
+
+
+
+
+
+
+
+
+    
+
+    // This was a POC for something else
+
+    // function testCCIP()public view{
+    //     bitwise.CCIP(address(32),3317);
+    // }
+
+    // function testBIT() public{
+    //     bitwise._setRole(address(this),2,true);
+    //     bool ok = bitwise._hasRole(address(this),3);
+    //     assertTrue(ok);
+    // }
 
 }
 //============================================================//
