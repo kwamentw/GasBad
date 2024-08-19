@@ -9,6 +9,7 @@ import {Reverts} from "../src/require.sol";
 import {ForGas} from "../src/for.sol";
 import {VarGas} from "../src/variables.sol";
 import {BitwiseOperations} from "../src/bitwise.sol";
+import {BitwiseAccessControls} from "../src/btiwiseAccessControl.sol";
 
 /**
  * @title Gas optimisations check test
@@ -22,6 +23,7 @@ contract returnTest is Test {
     ForGas forResult;
     VarGas vargas;
     BitwiseOperations bitwise;
+    BitwiseAccessControls btwsAccess;
 
     function setUp() public {
         gasbad = new GasBad();
@@ -52,6 +54,25 @@ contract returnTest is Test {
         vm.prank(address(45));
         rev.secondFunc(address(45));
     }
+
+    function test_rev_thirdFunc() public {
+        vm.expectRevert();
+        rev.thirdFunc(address(45));
+    }
+
+    function test_rev_fourthFunc() public {
+        vm.expectRevert();
+        rev.fourthFunc(address(45));
+    }
+
+    function test_rev_fifthFunc() public view{
+        rev.fifthFunc(23);
+    }
+
+    function test_rev_sixthFunc() public view{
+        rev.sixthFunc(23);
+    }
+
 //////////////////////// for test //////////////////////////////
 
     function test_for_firstFunc() public{
@@ -131,28 +152,11 @@ contract returnTest is Test {
         bitwise.normalModulo(515);
     }
 
-
-
-
-
-
-
-
-
-
-    
-
-    // This was a POC for something else
-
-    // function testCCIP()public view{
-    //     bitwise.CCIP(address(32),3317);
-    // }
-
-    // function testBIT() public{
-    //     bitwise._setRole(address(this),2,true);
-    //     bool ok = bitwise._hasRole(address(this),3);
-    //     assertTrue(ok);
-    // }
+    function testBiwiseAccessControls() public{
+        btwsAccess._setRole(address(this),0);
+        bool ok = btwsAccess._hasRole(address(this),1);
+        assertTrue(ok);
+    }
 
 }
 //============================================================//

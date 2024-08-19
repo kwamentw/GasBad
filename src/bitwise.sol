@@ -8,7 +8,7 @@ pragma solidity 0.8.26;
  */
 contract BitwiseOperations{
 
-    // mapping(address => bytes32) public _addressRoles;
+
     /**
      * Bitwise operation to replace division
      * looks like >> 1 = 2^1 == /2 and >> 4 = 2^2 == /4
@@ -74,35 +74,5 @@ contract BitwiseOperations{
         result = victim % 256;
         // result = victim % 8;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-        // POC for something
-    
-    // function CCIP(address contractAddress, uint64 chainSelector) public pure returns(bytes32) {
-    //     return bytes32(
-    //         uint256(uint160(contractAddress)) |
-    //         (uint256(chainSelector) << 160)
-    //     );
-    // }
-
-    //     function _setRole(address user, uint8 role, bool status) public  {
-    //     uint256 roles = uint256(_addressRoles[user]);
-    //     _addressRoles[user] = bytes32(roles | (1 << role));
-    // }
-
-    //     function _hasRole(address user, uint8 role) public view returns(bool) {
-    //     uint256 roles = uint256(_addressRoles[user]);
-    //     return (roles & (1 << role)) > 0;
-    // }
 
 }
