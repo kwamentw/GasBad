@@ -10,6 +10,7 @@ import {ForGas} from "../src/for.sol";
 import {VarGas} from "../src/variables.sol";
 import {BitwiseOperations} from "../src/bitwise.sol";
 import {BitwiseAccessControls} from "../src/btiwiseAccessControl.sol";
+import {EEEFF} from "../src/if.sol";
 
 /**
  * @title Gas optimisations check test
@@ -24,6 +25,7 @@ contract returnTest is Test {
     VarGas vargas;
     BitwiseOperations bitwise;
     BitwiseAccessControls btwsAccess;
+    EEEFF eeff;
 
     function setUp() public {
         gasbad = new GasBad();
@@ -31,6 +33,7 @@ contract returnTest is Test {
         forResult = new ForGas();
         vargas = new VarGas();
         bitwise = new BitwiseOperations();
+        eeff = new EEEFF();
     }
 ////////////////// Return Test  ////////////////////////////////
     function test_gas_firstFunc() public {
@@ -152,12 +155,19 @@ contract returnTest is Test {
         bitwise.normalModulo(515);
     }
 
+    function test_if_condi() public view {
+        eeff.conditionalIf(23);
+    }
+
+    function test_if_nested() public view{
+        eeff.nestedIf(40);
+    }
+
     function testBiwiseAccessControls() public{
         btwsAccess._setRole(address(this),0);
         bool ok = btwsAccess._hasRole(address(this),1);
         assertTrue(ok);
     }
-
 }
 //============================================================//
 
