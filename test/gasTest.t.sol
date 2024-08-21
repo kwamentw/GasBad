@@ -132,6 +132,8 @@ contract returnTest is Test {
         // vargas.hiddenOverflow3(200);
     }
 
+    //////////////////////////// bitwise savings test//////////////////////////////////////////
+
     function test_bitwise_bitDivFunc() public view {
         bitwise.bitwiseDivision(44);
     }
@@ -155,6 +157,8 @@ contract returnTest is Test {
         bitwise.normalModulo(515);
     }
 
+    /////////////////////////////////// if optimizations test ////////////////////////////////////
+
     function test_if_condi() public view {
         eeff.conditionalIf(23);
     }
@@ -162,6 +166,8 @@ contract returnTest is Test {
     function test_if_nested() public view{
         eeff.nestedIf(40);
     }
+
+    /////////////////////////////// Out of bounds ////////////////////////////////////////
 
     function testBiwiseAccessControls() public{
         btwsAccess._setRole(address(this),0);
