@@ -88,6 +88,14 @@ contract returnTest is Test {
     function test_for_thirdFunc() public {
         forResult.thirdFunc();
     }
+
+    function test_for_fourthFunc() public {
+        forResult.fourFunc();
+    }
+
+    function test_for_fifthFunc() public {
+        forResult.fifthFunc();
+    }
 ////////////////// variable initialisation test /////////////////////////
     function test_vargas_firstFunc() public  {
         vargas.firstFunc();
