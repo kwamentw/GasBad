@@ -10,6 +10,10 @@ This repository is mainly to test any gas saving technique we see or here about 
 
     variables.sol - checks how much gas the various initialization of variables coding styles cost
 
+# Credits
+1. All the twitter accounts that tweet about Gas
+2. https://github.com/devanshbatham/Solidity-Gas-Optimization-Tips - inspired the bitwise.sol, swap.sol, 4th and 5th function of for.sol.
+
 
 
 ## Usage
