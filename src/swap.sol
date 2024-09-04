@@ -17,6 +17,7 @@ contract Swap{
      * Typical swap function with a temp variable 
      * @return varI that has been swapped with varII
      * @return varII that has been swapped with varI
+     * Gas Used - 15500
      */
     function swap_One() external returns(uint256,uint256){
         uint256 temp;
@@ -31,6 +32,7 @@ contract Swap{
      * Gas optimised swap function in a single line
      * @return varI that has been swapped with varII
      * @return varII that has been swapped with varI
+     * Gas used - 15524
      */
     function swap_Two() external returns(uint256,uint256){
         (varI,varII) = (varII,varI);

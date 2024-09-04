@@ -11,6 +11,7 @@ import {VarGas} from "../src/variables.sol";
 import {BitwiseOperations} from "../src/bitwise.sol";
 import {BitwiseAccessControls} from "../src/btiwiseAccessControl.sol";
 import {EEEFF} from "../src/if.sol";
+import {Swap} from "../src/swap.sol";
 
 /**
  * @title Gas optimisations check test
@@ -26,6 +27,7 @@ contract returnTest is Test {
     BitwiseOperations bitwise;
     BitwiseAccessControls btwsAccess;
     EEEFF eeff;
+    Swap sww;
 
     function setUp() public {
         gasbad = new GasBad();
@@ -34,6 +36,7 @@ contract returnTest is Test {
         vargas = new VarGas();
         bitwise = new BitwiseOperations();
         eeff = new EEEFF();
+        sww = new Swap();
     }
 ////////////////// Return Test  ////////////////////////////////
     function test_gas_firstFunc() public {
@@ -168,11 +171,20 @@ contract returnTest is Test {
     /////////////////////////////////// if optimizations test ////////////////////////////////////
 
     function test_if_condi() public view {
-        eeff.conditionalIf(23);
+        eeff.conditionalIf(40);
     }
 
     function test_if_nested() public view{
-        eeff.nestedIf(40);
+        eeff.nestedIf(41);
+    }
+
+    //////////////////////////////////// Swap Var /////////////////////////////////////////// 
+    function test_swap_normal() public  {
+        sww.swap_One();
+    }
+
+    function test_swap_opti() public{
+        sww.swap_Two();
     }
 
     /////////////////////////////// Out of bounds ////////////////////////////////////////

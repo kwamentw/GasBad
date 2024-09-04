@@ -11,7 +11,7 @@ contract EEEFF {
     /**
      * Conditonal IF
      * @param number input we are validating
-     * Gas spent - 5839 [same value when for function returning both true & false]
+     * Gas spent - 5816 [same value when for function returning both true & false]
      */
     function conditionalIf(uint8 number) public pure returns(bool){
         if(number>0 && number<type(uint8).max && (number%2) ==1){
@@ -23,8 +23,8 @@ contract EEEFF {
     /**
      * Nested IF
      * @param number input we are validating
-     * Gas spent - 5696 [when function returns true]
-     * Gas spent - 5697 [when function returns false]
+     * Gas spent - 5674 [when function returns true]
+     * Gas spent - 5675 [when function returns false]
      */
     function nestedIf(uint8 number) public pure returns(bool){
         if (number>0){

@@ -29,7 +29,7 @@ contract VarGas{
     /**
      * Normal variable initialisation
      * With storage variables
-     * gas spent - 27470
+     * gas spent - 27571
      */
     function firstFunc() public returns(uint256){
         s_varOne = thirdFunc();
@@ -41,7 +41,7 @@ contract VarGas{
     /**
      * Variable initialisation
      * with cache variables
-     * gas spent - 5420
+     * gas spent - 5488
      */
     function secondFunc() public pure returns(uint256){
         uint256 varCache = thirdFunc();
@@ -50,7 +50,7 @@ contract VarGas{
 
     /**
      * Returns the value straight with no BS
-     * gas spent - 5435
+     * gas spent - 5481
      */
     function thirdFunc() public pure returns(uint256){
         return type(uint8).max;
@@ -61,7 +61,7 @@ contract VarGas{
     /**
      * Initialisation of storage variable to memory/cache variable
      * add uint16 max to the cache and return
-     * gas spent - 7670
+     * gas spent - 7726
      * when you add line 59 incase you want a persistent state gas spent is 10790
      *  - killing the purpose of caching the var
      *  - so use `fifthFunc` to save 210
@@ -75,7 +75,7 @@ contract VarGas{
 
     /**
      * Adding straight to the storage var and returning
-     * gas spent - 10580
+     * gas spent - 10671
      */
     function fifthFunc() public returns(uint256){
         s_varTwo += type(uint16).max;
@@ -84,7 +84,7 @@ contract VarGas{
 
     /**
      * returning a public storage variable
-     * gas spent - 7558
+     * gas spent - 7603
      */
     function sixFunc() public view returns(uint256){
         return s_varThree;
@@ -92,7 +92,7 @@ contract VarGas{
 
     /**
      * Returns a private/internal variable
-     * gas spent - 7580
+     * gas spent - 7602
      */
     function sevnFunc() public view returns(uint256){
         return s_varFour;
@@ -100,7 +100,7 @@ contract VarGas{
 
     /**
      * check whether initialising mappns to cache variables will save us data
-     * gas spent -7500
+     * gas spent -7523
      */
     function eighthFunc() public view returns(uint256){
         uint256 cacheVar = favNumber[address(42)];
@@ -109,7 +109,7 @@ contract VarGas{
 
     /**
      * can this OG way be better than caching
-     * gas spent -7521
+     * gas spent -7500
      */
     function ninethFunc() public view returns(uint256){
         return favNumber[address(42)];
@@ -117,7 +117,7 @@ contract VarGas{
 
     /**
      * checking to see gas different between this and unchecked wrap
-     * gas spent: 7741
+     * gas spent: 7730
      */
     function tenthFunc() public view returns(uint256){
     uint256 result = favNumber[msg.sender] + type(uint16).max;
@@ -126,7 +126,7 @@ contract VarGas{
 
     /**
      * wrapping the calculation on an unchecked block to see whether there will be gas diff
-     * gas spent: 7676
+     * gas spent: 7721
      */
     function eleventhFunc() public view returns(uint256){
         unchecked{
