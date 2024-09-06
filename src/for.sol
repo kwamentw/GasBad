@@ -14,7 +14,7 @@ contract ForGas {
 
     /**
      * this function uses array length caching and ++i instead of i++ gas optimisation
-     *  gas spent - 479401 
+     *  gas spent - 479379 
      */
     function firstFunc() public {
         uint256 arrayLength = collectionLength;
@@ -75,7 +75,7 @@ contract ForGas {
     /**
      * For loop using our normal uint256
      * from the test we will see that using uint256 is more gas savvy
-     * Gas spent - 12427
+     * Gas spent - 12405
      */
     function fifthFunc() public returns(uint256){
         uint256 beans = 50;
